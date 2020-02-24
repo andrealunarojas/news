@@ -12,6 +12,7 @@ ForecastIO.api_key = "cc56c1b4ade32f26d3afeae7d1ae7617"
 get "/" do
     view "ask"
 end
+
 get "/news" do
     results = Geocoder.search(params["q"])
     lat_long = results.first.coordinates
@@ -23,8 +24,8 @@ get "/news" do
     url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5c6ab66caccc42be8fdca6414e89b85b"
 @newspaper = HTTParty.get(url).parsed_response.to_hash
     @deckhigh = [ ]
-    @decklow =[]
-    @deckcond=[]
+    @decklow =[ ]
+    @deckcond=[ ]
     @decknewstitle = [ ]
     @decknewsurl = [ ]
 
@@ -33,13 +34,9 @@ for days in @forecast["daily"]["data"]
     @decklow << [days["temperatureLow"]]
     @deckcond << [days["summary"]]
 end
-
-
 for news in @newspaper ["articles"]
     @decknewstitle << [news["title"]]
     @decknewsurl << [news["url"]]
 end
-
-
 view "ask"
 end

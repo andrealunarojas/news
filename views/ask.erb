@@ -53,43 +53,27 @@
 <div class="row my-5">
     <div class="col-sm-3">
 <h5> Temp Max </h5>
-<% for day in @deckhigh %>
-     <p><%= day%> </p>
+<% for card in @deckhigh%>
+     <p><%= card%> </p>
      <% end %>
-    </div>
+        </div>
     <div class="col-sm-3">
 <h5> Temp Min </h5>
-<% for day in @decklow %>
-     <p><%= day%> </p>
+<% for card in @decklow%>
+     <p><%= card%> </p>
      <% end %>
-    </div>
-    <div class="col-sm-6">
-<h5> Conditions </h5>
-<% for day in @deckcond %>
-     <p><%= day%> </p>
+        </div>
+        <div class="col-sm-6">
+<h5> Weather conditions </h5>
+<% for card in @deckcond%>
+     <p><%= card%> </p>
      <% end %>
-    </div>
-    </div>
+        </div>
 </div>
-    </div>
+    
 
-    <div class="container mt-5 text-center">
-    <h2>RECENT NEWS</h2>
-    <div class="row my-5">
-    <div class="col-sm-6">
-<h5> Title </h5>
-<% for day in @decknewstitle %>
-     <p><%= day%> </p>
-     <% end %>
-    </div>
-    <div class="col-sm-6">
-<h5> URL </h5>
-<% for day in @decknewsurl %>
-     <p><%= day%> </p>
-     <% end %>
-    </div>
-    </div>
-</div>
+    
+
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
