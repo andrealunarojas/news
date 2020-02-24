@@ -23,29 +23,73 @@
   <body>
     <div class="container mt-5">
     <h1> The best APP for weather forecast and recent news!</h1>
-      <h2>Define your location</h2>
+      <h2>Set your location</h2>
       <form action="/news">
       <input type="text" name="q">
       <button type="submit"> Go here! </submit>
       </form>
-        </div>
-    <div class="container mt-5">
+    </div>
+
+    <div class="container mt-5 text-center">
     <h2>WEATHER FORECAST </h2>
+    </div>
+
+    <div class="container mt-5 text-center" >
+    <h3> Current weather </h3>
+    <div class="row my-5">
+    <div class="col-sm-6" >
     <p> Currently Temperature: <%=@current_temp%>
     </p>
+    </div>
+    <div class="col-sm-6" >
     <p> Current Conditions: <%=@current_cond%>
     </p>
-<p> Forecast: <%=@deck%>
-    </p>
- 
+    </div>
+    </div>
+    </div>
+   
+    <div class="container text-center" >
+    <h3> Forecast for the next days </h3>
+<div class="row my-5">
+    <div class="col-sm-3">
+<h5> Temp Max </h5>
+<% for day in @deckhigh %>
+     <p><%= day%> </p>
+     <% end %>
+    </div>
+    <div class="col-sm-3">
+<h5> Temp Min </h5>
+<% for day in @decklow %>
+     <p><%= day%> </p>
+     <% end %>
+    </div>
+    <div class="col-sm-6">
+<h5> Conditions </h5>
+<% for day in @deckcond %>
+     <p><%= day%> </p>
+     <% end %>
+    </div>
+    </div>
+</div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 text-center">
     <h2>RECENT NEWS</h2>
-<p> Forecast: <%=@decknews%>
-    </p>
+    <div class="row my-5">
+    <div class="col-sm-6">
+<h5> Title </h5>
+<% for day in @decknewstitle %>
+     <p><%= day%> </p>
+     <% end %>
     </div>
-
+    <div class="col-sm-6">
+<h5> URL </h5>
+<% for day in @decknewsurl %>
+     <p><%= day%> </p>
+     <% end %>
+    </div>
+    </div>
+</div>
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

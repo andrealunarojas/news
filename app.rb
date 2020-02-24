@@ -22,14 +22,24 @@ get "/news" do
     @current_cond = @forecast ["currently"]["summary"]
     url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5c6ab66caccc42be8fdca6414e89b85b"
 @newspaper = HTTParty.get(url).parsed_response.to_hash
-    @deck = [ ]
-    @decknews = [ ]
+    @deckhigh = [ ]
+    @decklow =[]
+    @deckcond=[]
+    @decknewstitle = [ ]
+    @decknewsurl = [ ]
+
 for days in @forecast["daily"]["data"]
-    @deck << "A high temperature of #{days["temperatureHigh"]} and #{days["summary"]}"
+    @deckhigh << [days["temperatureHigh"]]
+    @decklow << [days["temperatureLow"]]
+    @deckcond << [days["summary"]]
 end
 
+
 for news in @newspaper ["articles"]
-    @decknews << [news["title"],news["url"]]
+    @decknewstitle << [news["title"]]
+    @decknewsurl << [news["url"]]
 end
+
+
 view "ask"
 end

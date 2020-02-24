@@ -6,4 +6,9 @@ deck = [ ]
 for daily in news["articles"]
     deck << [daily["title"],daily["url"]]
 end
-puts deck [1][0]
+
+for days in deck
+    puts deck[days]
+end
+
+
