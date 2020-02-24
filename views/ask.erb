@@ -71,19 +71,16 @@
  <div class="container text-center" >
     <h3> Recent news </h3>
 <div class="row my-5">
-    <div class="col-sm-6">
-<h5> Title </h5>
-<% for news in @decktitle%>
-     <p><%= news%> </p>
-     <% end %>
-        </div>
 <div class="col-sm-6">
+<h5> Title </h5>
+     <p><%= @decktitle %> </p>
+  </div>   
+  <div class="col-sm-6">
 <h5> URL </h5>
-<% for news in @deckurl%>
-     <p><%= news%> </p>
-     <% end %>
-        </div>
+     <p><%= @deckurl %> </p>
+  </div>   
 </div>
+
     
 
  <!-- Optional JavaScript -->
