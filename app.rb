@@ -26,8 +26,8 @@ get "/news" do
     @deckhigh = [ ]
     @decklow =[ ]
     @deckcond=[ ]
-    @decktitle = [ ]
-    @deckurl = [ ]
+    decktitle = [ ]
+    deckurl = [ ]
 
 for days in @forecast["daily"]["data"]
     @deckhigh << "#{days["temperatureHigh"]}"
@@ -36,11 +36,10 @@ for days in @forecast["daily"]["data"]
 end
 
 for news in @newspaper ["articles"]
-    decktitle << [news["title"]]
-    deckurl << [news["url"]]
+    @decktitle << "#{news["title"]}"
+    @deckurl << "#{news["url"]}"
 end
 
-@titles = decktitle
-@url = deckurl
+
 view "ask"
 end
