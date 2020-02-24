@@ -68,16 +68,18 @@
 </div>
     
 
- <div class="container text-center" >
+ <div class="container mt-5 text-center" >
     <h3> Recent news </h3>
-<div class="row my-5">
+<div class="row">
 <div class="col-sm-6">
 <h5> Title </h5>
-     <p><%= @decktitle %> </p>
+<% card in @titles %>
+     <p><% card %> </p>
+     <% end %>
   </div>   
   <div class="col-sm-6">
 <h5> URL </h5>
-     <p><%= @deckurl %> </p>
+     <p><%= @url %> </p>
   </div>   
 </div>
 
