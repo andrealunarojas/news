@@ -26,17 +26,18 @@ get "/news" do
     @deckhigh = [ ]
     @decklow =[ ]
     @deckcond=[ ]
-    @decknewstitle = [ ]
-    @decknewsurl = [ ]
+    @decktitle = [ ]
+    @deckurl = [ ]
 
 for days in @forecast["daily"]["data"]
-    @deckhigh << [days["temperatureHigh"]]
-    @decklow << [days["temperatureLow"]]
-    @deckcond << [days["summary"]]
+    @deckhigh << "#{days["temperatureHigh"]}"
+    @decklow << "#{days["temperatureHigh"]}"
+    @deckcond << "#{days["temperatureHigh"]}"
 end
+
 for news in @newspaper ["articles"]
-    @decknewstitle << [news["title"]]
-    @decknewsurl << [news["url"]]
+    @decktitle << [news["title"]]
+    @deckurl << [news["url"]]
 end
 view "ask"
 end
