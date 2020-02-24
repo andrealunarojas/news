@@ -29,8 +29,7 @@ for days in @forecast["daily"]["data"]
 end
 
 for news in @newspaper ["articles"]
-    @decknews << ["#{news["title"]}","#{news["source"]}"]
+    @decknews << [news["title"],news["url"]]
 end
 view "ask"
-
 end
